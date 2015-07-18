@@ -83,7 +83,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
             }
         });
 
-
+    /**
         // This button helps you find a mess to clean
         Button reporter = (Button) findViewById(R.id.mess_button);
         reporter.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 startActivity(intent);
             }
         });
-
+*/
     }
 
     protected synchronized void buildGoogleApiClient() {

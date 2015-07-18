@@ -2,6 +2,7 @@ package com.battlehack.cleancity.cleancity;
 
 import android.content.Intent;
 import android.location.Location;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +11,8 @@ import android.view.MenuItem;
 
 
 public class LocationActivity extends ActionBarActivity {
-
+    double mockLatitude = 49;
+    double mockLongitude = -79;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,9 @@ public class LocationActivity extends ActionBarActivity {
         Log.d("name is", name);
         Log.d("Longitude is", ""+longitude);
         Log.d("Latitude is", ""+latitude);
+        //Intent mapIntent = new Intent(android.content.Intent.ACTION_VIEW,
+                //Uri.parse("http://maps.google.com/maps?saddr=%f,%f&daddr=%f,%f",String.valueOf(latitude), String.valueOf(longitude), String.valueOf(mockLatitude), String.valueOf(mockLongitude)));
+        //startActivity(mapIntent);
     }
 
     @Override
