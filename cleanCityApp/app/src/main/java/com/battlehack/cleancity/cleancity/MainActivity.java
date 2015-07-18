@@ -85,11 +85,11 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 
     /**
         // This button helps you find a mess to clean
-        Button reporter = (Button) findViewById(R.id.mess_button);
+        Button cleaner = (Button) findViewById(R.id.clean_button);
         reporter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), ReportActivity.class);
+                Intent intent = new Intent(getBaseContext(), CleanListActivity.class);
                 startActivity(intent);
             }
         });
@@ -164,13 +164,6 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
     }
 
 
