@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bin_spinner_array">
+        <item>Garbage</item>
+        <item>Recycling</item>
+        <item>Compost</item>
+        <item>E-waste</item>
+    </string-array>
+</resources>
