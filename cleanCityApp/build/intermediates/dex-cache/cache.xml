@@ -16,25 +16,11 @@
         <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-bf7939a156cd62b232a8089adca17fc5812dcd79.jar" />
     </item>
     <item
-        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-2e5ee708b27ee84d3e69e5915f521f022038615e.jar" />
-    </item>
-    <item
         jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
         <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-2b905d9073c693e7fcd8bf9eba317d9846ddc62e.jar" />
-    </item>
-    <item
-        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d405025c600055237c171a0bbabaa49d69696573">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-02bc36bd990592fcb6f6757e4ccf2bd5405fce9b.jar" />
     </item>
     <item
         jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/classes.jar"
@@ -51,13 +37,6 @@
         <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-4fbb5cfb547661586497f244ede654a2d35cf7e7.jar" />
     </item>
     <item
-        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-21223bd6ccf1309c72da38198080b41a63cfb73e.jar" />
-    </item>
-    <item
         jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -65,32 +44,11 @@
         <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-dac179ef7f2a6c6e485c1b14ad18c8e0ccc9ec8b.jar" />
     </item>
     <item
-        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-8042f508ff9daf9e6f6b0d21a7779b44a4914015.jar" />
-    </item>
-    <item
         jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="a78183f30e769a98ab4820794f597763088d3065">
         <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-b70c1e590900340dd4910f6e185f04bd7ebc4f38.jar" />
-    </item>
-    <item
-        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-9e6c80f90712197b8479d57d5b599c03ecf3d191.jar" />
-    </item>
-    <item
-        jar="/Users/armanghassemi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-6e1b9d85e8bf76544b427d539a3b50f5f6aed0b3.jar" />
     </item>
     <item
         jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/classes.jar"
@@ -112,6 +70,76 @@
         revision="21.1.2"
         sha1="a1372c17fccacca753d3951d3ad820571cbce075">
         <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-6b5454d10b8e1d143a49777bfa719f9bcc8603f7.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-a5ffb6dd0147692ca547dd074cfcc007e0672fa8.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-f937d591d96dd0a2a4e0fb142493c05216b4e44f.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-cd74c5f638c339dab251a0c37e31897fb4d653ea.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-b93d291b20a7267cf139c922a4ce7250ff86de5e.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-2e5ee708b27ee84d3e69e5915f521f022038615e.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-02bc36bd990592fcb6f6757e4ccf2bd5405fce9b.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-21223bd6ccf1309c72da38198080b41a63cfb73e.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-8042f508ff9daf9e6f6b0d21a7779b44a4914015.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-9e6c80f90712197b8479d57d5b599c03ecf3d191.jar" />
+    </item>
+    <item
+        jar="/Users/armanghassemi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-6e1b9d85e8bf76544b427d539a3b50f5f6aed0b3.jar" />
     </item>
     <item
         jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/classes.jar"
@@ -142,39 +170,11 @@
         <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-52f06ad6fc04d6d1b42340fb8432ef938cddbba3.jar" />
     </item>
     <item
-        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-a5ffb6dd0147692ca547dd074cfcc007e0672fa8.jar" />
-    </item>
-    <item
-        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-f937d591d96dd0a2a4e0fb142493c05216b4e44f.jar" />
-    </item>
-    <item
         jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
         <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-0121770bfd829abd49821b68d9efe4335afa8234.jar" />
-    </item>
-    <item
-        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-cd74c5f638c339dab251a0c37e31897fb4d653ea.jar" />
-    </item>
-    <item
-        jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/pre-dexed/debug/classes-b93d291b20a7267cf139c922a4ce7250ff86de5e.jar" />
     </item>
     <item
         jar="/Users/armanghassemi/androidStudioProjects/cleanCity/cleanCityApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"

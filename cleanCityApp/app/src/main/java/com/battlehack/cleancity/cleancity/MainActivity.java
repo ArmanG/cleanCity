@@ -4,13 +4,14 @@ import android.content.Intent;
 import android.location.Location;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-
+import android.widget.Toast;
 
 
 import com.google.android.gms.common.ConnectionResult;
@@ -57,6 +58,9 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         });
 
         buildGoogleApiClient();
+        mGoogleApiClient.connect();
+        onConnected( savedInstanceState );
+
 
     }
 
@@ -66,6 +70,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
+
     }
 
     @Override
@@ -73,11 +78,13 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
         if (mLastLocation != null) {
-            /**
-            mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
-            mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
-             */
+
+            Toast.makeText(this, "Latitude = " + mLastLocation.getLatitude() + "\n" +
+                    "Longitude = " + mLastLocation.getLongitude(), Toast.LENGTH_LONG).show();
+            Log.d("LATITUDE", String.valueOf(mLastLocation.getLatitude()));
+            Log.d("GGGGGGGG", "HELLLLLLLLL");
         }
+
 
     }
 
@@ -126,6 +133,8 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 }
