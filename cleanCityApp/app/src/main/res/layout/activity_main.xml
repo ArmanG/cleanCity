@@ -4,16 +4,17 @@
     android:orientation="vertical"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/mainlayout">
 
     <TextView android:text="Find the nearest: " android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/textViewForm" />
 
     <Spinner android:id="@+id/bin_spinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/textViewForm"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -25,5 +26,36 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <TextView android:text="Report a mess: " android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewMess"
+        android:layout_below="@+id/find_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Report!"
+        android:id="@+id/mess_button"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewMess"
+        android:layout_alignParentLeft="true" />
+
+    <TextView android:text="Cleanup a mess: " android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewClean"
+        android:layout_below="@+id/mess_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clean!"
+        android:id="@+id/clean_button"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewClean"
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>

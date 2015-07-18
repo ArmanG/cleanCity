@@ -2,6 +2,7 @@ package com.battlehack.cleancity.cleancity;
 
 import android.content.Intent;
 import android.location.Location;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +32,8 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     String mLastUpdateTime;
     Location mCurrentLocation;
 
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
+        // This button helps you find a receptable bin
         Button finder = (Button) findViewById(R.id.find_button);
         finder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +61,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 double longitude = mLastLocation.getLongitude();
                 double latitude = mLastLocation.getLatitude();
 
-                Log.d("latitude in main", ""+longitude);
+                Log.d("latitude in main", "" + longitude);
 
                 intent.putExtra("longitude", longitude);
                 intent.putExtra("latitude", latitude);
@@ -67,8 +71,28 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 
         buildGoogleApiClient();
         mGoogleApiClient.connect();
-        onConnected( savedInstanceState );
+        onConnected(savedInstanceState);
 
+        // This button helps you report a mess
+        Button reporter = (Button) findViewById(R.id.mess_button);
+        reporter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), ReportActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // This button helps you find a mess to clean
+        Button reporter = (Button) findViewById(R.id.mess_button);
+        reporter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), ReportActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -142,7 +166,12 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         return super.onOptionsItemSelected(item);
     }
 
-
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
 
 
 }
