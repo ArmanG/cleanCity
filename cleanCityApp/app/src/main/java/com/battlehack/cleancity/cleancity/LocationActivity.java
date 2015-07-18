@@ -1,7 +1,10 @@
 package com.battlehack.cleancity.cleancity;
 
+import android.content.Intent;
+import android.location.Location;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,6 +15,16 @@ public class LocationActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+
+        // Get the location from the intent
+        Intent intent = this.getIntent();
+        Bundle b = intent.getExtras();
+        String name = b.getString("name");
+        double longitude = b.getDouble("longitude");
+        double latitude = b.getDouble("latitude");
+        Log.d("name is", name);
+        Log.d("Longitude is", ""+longitude);
+        Log.d("Latitude is", ""+latitude);
     }
 
     @Override

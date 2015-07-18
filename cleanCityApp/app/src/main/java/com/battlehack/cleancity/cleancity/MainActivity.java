@@ -53,6 +53,14 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 String selectedbin = spinner.getSelectedItem().toString();
                 Intent intent = new Intent(getBaseContext(), LocationActivity.class);
                 intent.putExtra("name", selectedbin);
+
+                double longitude = mLastLocation.getLongitude();
+                double latitude = mLastLocation.getLatitude();
+
+                Log.d("latitude in main", ""+longitude);
+
+                intent.putExtra("longitude", longitude);
+                intent.putExtra("latitude", latitude);
                 startActivity(intent);
             }
         });
