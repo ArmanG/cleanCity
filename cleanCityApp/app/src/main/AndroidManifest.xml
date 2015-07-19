@@ -44,6 +44,10 @@
             android:name=".binReportActivity"
             android:label="@string/title_activity_bin_report" >
         </activity>
+        <activity
+            android:name=".SelectProximityActivity"
+            android:label="@string/title_activity_select_proximity" >
+        </activity>
     </application>
 
 </manifest>

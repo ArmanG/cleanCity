@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,7 +15,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -51,6 +54,19 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        LinearLayout proximity = (LinearLayout) findViewById(R.id.proximityLayout);
+        proximity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start a new activity which finds the location of the nearest bin
+                TextView proximityValue = (TextView) findViewById(R.id.proximityValue);
+                Intent intent = new Intent(getBaseContext(), SelectProximityActivity.class);
+                double proximity = Double.parseDouble(proximityValue.getText().toString());
+                intent.putExtra("proximity", proximity);
+                startActivityForResult(intent, 1);
+            }
+        });
 
         final Spinner spinner = (Spinner) findViewById(R.id.bin_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -245,5 +261,20 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == 1) {
+            // Make sure the request was successful
+            if (resultCode == RESULT_OK) {
+                // The user adjusted the proximity
+                // The Intent's data Uri identifies what the new proximity is
+                String proximity = data.getStringExtra("proximity");
+                Log.d("onActivityResult prox", proximity);
+                TextView proxValue = (TextView) findViewById(R.id.proximityValue);
+                proxValue.setText(proximity);
+            }
+        }
+    }
 
 }
