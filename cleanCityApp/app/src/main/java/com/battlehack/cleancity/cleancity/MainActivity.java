@@ -91,12 +91,27 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         onConnected(savedInstanceState);
 
 
-        // This button helps you report a mess
-        Button reporter = (Button) findViewById(R.id.litter_button);
-        reporter.setOnClickListener(new View.OnClickListener() {
+        // This button helps you report a litter mess
+        Button reportLitter = (Button) findViewById(R.id.litter_button);
+        reportLitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getBaseContext(), ReportActivity.class);
+
+                // same as reportBin right now
+                startActivity(intent);
+            }
+        });
+
+        // This button helps you report a full bin
+        Button reportBin = (Button) findViewById(R.id.bin_button);
+        reportBin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), ReportActivity.class);
+
+                // same as reportLitter right now
                 startActivity(intent);
             }
         });
