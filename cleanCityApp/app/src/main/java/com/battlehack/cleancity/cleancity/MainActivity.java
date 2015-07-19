@@ -92,7 +92,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 
 
         // This button helps you report a mess
-        Button reporter = (Button) findViewById(R.id.mess_button);
+        Button reporter = (Button) findViewById(R.id.litter_button);
         reporter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
