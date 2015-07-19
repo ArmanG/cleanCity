@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Proximity: "
+            android:text="  Proximity: "
             android:id="@+id/proximityTextView"/>
 
         <TextView
@@ -62,7 +62,7 @@
         android:id="@+id/findingLayout"
         android:clickable="true">
 
-        <TextView android:text="Find the nearest: " android:layout_width="wrap_content"
+        <TextView android:text="  Find the nearest: " android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewForm"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -100,7 +100,7 @@
         android:layout_marginBottom="15dp">
 
         <TextView
-            android:text="Report a mess"
+            android:text="  Report a mess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/messTextView"
