@@ -9,5 +9,6 @@
     <string name="title_activity_clean_list">CleanListActivity</string>
     <string name="title_activity_litter_report">litterReportActivity</string>
     <string name="title_activity_bin_report">binReportActivity</string>
+    <string name="report_thank_you"> Thank you for reporting the mess! Someone will be sent to verify this location. If you are the first reporter, we will credit your account!</string>
 
 </resources>

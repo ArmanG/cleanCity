@@ -2,6 +2,20 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\sharonnie\.gradle\caches\modules-2\files-2.1\com.braintreepayments.api\data\1.5.1\6d80889594ef1f8a74c1b6d556eaa10daa18c2cf\data-1.5.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6d80889594ef1f8a74c1b6d556eaa10daa18c2cf">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\data-1.5.1-0c996cc6a500b8676eec294f35ed6d9599702419.jar" />
+    </item>
+    <item
+        jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-759c810a044311949e38f42dfc447b416d2a04f0.jar" />
+    </item>
+    <item
         jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -21,6 +35,13 @@
         revision="21.1.2"
         sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
         <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-100b214ee826a8b1035e5135602bb8225f750f93.jar" />
+    </item>
+    <item
+        jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.braintreepayments.api\braintree\1.5.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d8c371dd384cfd8f6e5d3748c9b17897306236a2">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-67a873a7b92f9327bfd97619fb68c2f3617985c5.jar" />
     </item>
     <item
         jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\classes.jar"
@@ -51,13 +72,6 @@
         <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-4027a65938a43a0460c85785cb2f2de98e430a32.jar" />
     </item>
     <item
-        jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.1.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e0b0c35d02308b270015a74cada4887e2e49b889">
-        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-1d36e70f076c33172aef36af5ce2121616e24121.jar" />
-    </item>
-    <item
         jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.5.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -65,11 +79,18 @@
         <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-c1d1d3dfc9f3fdf4a13c93cf7764ace73049a7c0.jar" />
     </item>
     <item
-        jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
+        jar="C:\Users\sharonnie\.gradle\caches\modules-2\files-2.1\com.loopj.android\android-async-http\1.4.4\3bae85a076241828810bf8fbcc12e5891d5fc34c\android-async-http-1.4.4.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-86c8887b988aed5b66a684f71778da6273240ee2.jar" />
+        sha1="3bae85a076241828810bf8fbcc12e5891d5fc34c">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.4-501760d09c744f71be26e268b5f0c1501f29abfe.jar" />
+    </item>
+    <item
+        jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.braintreepayments\card-form\1.4.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8ea605f91070e7ba369904ecc2bed432892f9589">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-7d6f2660975c681b3aae8975c6a705d36421f938.jar" />
     </item>
     <item
         jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\classes.jar"
@@ -86,6 +107,13 @@
         <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-b6ae9f5dc36bd1174fbe7142568066d34e4f076f.jar" />
     </item>
     <item
+        jar="C:\Users\sharonnie\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\gson-2.3.1-fe55feec9c517e76d1d4d5cce0cb49da1e68cc5c.jar" />
+    </item>
+    <item
         jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.5.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -93,18 +121,11 @@
         <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-59c9ece73a01ba997e6d12d9fdbe65c44e0fea49.jar" />
     </item>
     <item
-        jar="C:\Users\sharonnie\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jar="C:\Users\sharonnie\.gradle\caches\modules-2\files-2.1\com.braintreepayments.api\braintree-api\1.5.1\919ab48bb9f97e993b27f85b7fe3756ecb3822ee\braintree-api-1.5.1.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-151ceba36d6a3b85b6638b12baa310431bb645e4.jar" />
-    </item>
-    <item
-        jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-5ef908aca3d838dc718283af0a3b37670049b815.jar" />
+        sha1="919ab48bb9f97e993b27f85b7fe3756ecb3822ee">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\braintree-api-1.5.1-fae4326623a639ab10205ee0b11c0d2561ae3004.jar" />
     </item>
     <item
         jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\classes.jar"
@@ -121,6 +142,20 @@
         <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-cacb5cea81266f46651f8151e7e11934de81953a.jar" />
     </item>
     <item
+        jar="C:\Users\sharonnie\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-4dd4e6e2d6b73aa0ed120faa9de96447d57844a1.jar" />
+    </item>
+    <item
+        jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\libs\PayPalAndroidSDK-2.9.10.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ec5f3d25ec21b18a0127332e63d90adbb582fb34">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\PayPalAndroidSDK-2.9.10-dcfbb2005c2d980fdc0aa4db4df5b79744dab2c4.jar" />
+    </item>
+    <item
         jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -133,6 +168,20 @@
         revision="21.1.2"
         sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
         <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-ba1409f1870de9828182d8ae292d23d467f95453.jar" />
+    </item>
+    <item
+        jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3abb4b88f5a8a0584a9b01d3170d7165f12f8588">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\classes-312c32acc63af27d5faf38b477f28d7333346b9a.jar" />
+    </item>
+    <item
+        jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-206331e96ded1babd837d1717281016ed16fd9a5.jar" />
     </item>
     <item
         jar="C:\Users\sharonnie\Documents\cleanCity\cleanCityApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\classes.jar"
