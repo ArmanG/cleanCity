@@ -25,12 +25,21 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Buy it now!"
+            android:text="Make a bounty"
             android:id="@+id/btnPay"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:onClick="checkout"
             android:enabled="false" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:id="@+id/btnPaid"
+            android:layout_gravity="center_horizontal"
+            android:clickable="true"
+            android:visibility="gone" />
     </LinearLayout>
 
 </RelativeLayout>

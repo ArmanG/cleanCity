@@ -2,9 +2,6 @@ package com.battlehack.cleancity.cleancity;
 
 import android.content.Intent;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -87,7 +84,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 Intent intent = new Intent(getBaseContext(), LocationActivity.class);
                 intent.putExtra("name", selectedbin);
 
-                EditText et = (EditText) findViewById(R.id.proximityValue);
+                TextView et = (TextView) findViewById(R.id.proximityValue);
                 double proximity = Double.parseDouble(et.getText().toString());
                 double longitude = mLastLocation.getLongitude();
                 double latitude = mLastLocation.getLatitude();
@@ -116,34 +113,14 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 
 
         // This button helps you report a litter mess
-        Button reportLitter = (Button) findViewById(R.id.litter_button);
-        reportLitter.setOnClickListener(new View.OnClickListener() {
+        LinearLayout messLayout = (LinearLayout) findViewById(R.id.messLayout);
+        messLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(getBaseContext(), ReportActivity.class);
 
                 // same as reportBin right now
-                startActivity(intent);
-            }
-        });
-
-        // This button helps you report a full bin
-        Button reportBin = (Button) findViewById(R.id.bin_button);
-        reportBin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
-                        mGoogleApiClient);
-
-                // if mLastLocation not in server, save to server and send payment
-
-
-
-                Intent intent = new Intent(getBaseContext(), ReportActivity.class);
-
-                // same as reportLitter right now
                 startActivity(intent);
             }
         });
@@ -172,8 +149,8 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 mGoogleApiClient);
         if (mLastLocation != null) {
 
-            Toast.makeText(this, "Latitude = " + mLastLocation.getLatitude() + "\n" +
-                    "Longitude = " + mLastLocation.getLongitude(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "Latitude = " + mLastLocation.getLatitude() + "\n" +
+            //       "Longitude = " + mLastLocation.getLongitude(), Toast.LENGTH_LONG).show();
         }
         mRequestingLocationUpdates = true;
         if (mRequestingLocationUpdates) {
@@ -276,5 +253,4 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
             }
         }
     }
-
 }

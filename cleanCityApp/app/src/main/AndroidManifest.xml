@@ -48,6 +48,10 @@
             android:name=".SelectProximityActivity"
             android:label="@string/title_activity_select_proximity" >
         </activity>
+        <activity
+            android:name=".SelectReceptacleActivity"
+            android:label="@string/title_activity_select_receptacle" >
+        </activity>
     </application>
 
 </manifest>

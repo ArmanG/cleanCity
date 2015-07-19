@@ -90,32 +90,16 @@
         android:layout_marginBottom="15dp">
 
         <TextView
-            android:text="Report a mess: "
+            android:text="Report a mess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/messTextView"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Report litter"
-                android:id="@+id/litter_button"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="  Report bin  "
-                android:id="@+id/bin_button"
-                android:layout_below="@+id/messTextView"
-                android:layout_toRightOf="@+id/messLayout"
-                android:layout_toEndOf="@+id/messLayout" />
 
         </LinearLayout>
 
