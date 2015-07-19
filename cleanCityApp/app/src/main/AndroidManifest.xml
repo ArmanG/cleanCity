@@ -35,6 +35,14 @@
             android:name=".CleanListActivity"
             android:label="@string/title_activity_clean_list" >
         </activity>
+        <activity
+            android:name=".litterReportActivity"
+            android:label="@string/title_activity_litter_report" >
+        </activity>
+        <activity
+            android:name=".binReportActivity"
+            android:label="@string/title_activity_bin_report" >
+        </activity>
     </application>
 
 </manifest>

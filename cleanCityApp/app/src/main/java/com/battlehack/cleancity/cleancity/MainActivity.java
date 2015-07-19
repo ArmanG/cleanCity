@@ -27,6 +27,7 @@ import com.google.android.gms.location.*;
 import org.json.JSONArray;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -44,6 +45,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     private boolean mResolvingError = false;
 
     APIGetAllBeacons api;
+    JSONArray jsonArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +121,9 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                         mGoogleApiClient);
 
-                //save mLastLocation in server
+                // if mLastLocation not in server, save to server and send payment
+
+
 
                 Intent intent = new Intent(getBaseContext(), ReportActivity.class);
 
@@ -231,11 +235,12 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     @Override
     public String allDownloadedBeacons(String data){
         try {
-            JSONArray jsonArray = new JSONArray(data);
+            jsonArray = new JSONArray(data);
             Log.d("JSON ARRAY IN MAIN:", ""+jsonArray );
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         return "";
     }
 

@@ -7,5 +7,7 @@
     <string name="title_activity_location">LocationActivity</string>
     <string name="title_activity_report">ReportActivity</string>
     <string name="title_activity_clean_list">CleanListActivity</string>
+    <string name="title_activity_litter_report">litterReportActivity</string>
+    <string name="title_activity_bin_report">binReportActivity</string>
 
 </resources>
