@@ -37,6 +37,15 @@ public class BeaconListDrawerFragment extends Fragment implements APIGetBeaconsB
     public BeaconListDrawerFragment() {}
 
 
+    public void loadBeacons() {
+        // Create
+        try {
+            this.api.execute(lat, lon, max_dist);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static BeaconListDrawerFragment newInstance(double lat, double lon, double max_dist) {
         BeaconListDrawerFragment fragment = new BeaconListDrawerFragment();
         Bundle args = new Bundle();
@@ -59,13 +68,6 @@ public class BeaconListDrawerFragment extends Fragment implements APIGetBeaconsB
             this.lat = getArguments().getDouble(LATITUDE);
             this.lon = getArguments().getDouble(LONGITUDE);
             this.max_dist = getArguments().getDouble(MAX_DIST);
-
-            // Create
-            try {
-                this.api.execute(lat, lon, max_dist);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
     }
 

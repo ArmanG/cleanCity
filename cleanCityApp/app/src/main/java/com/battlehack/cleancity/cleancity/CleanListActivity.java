@@ -1,11 +1,7 @@
 package com.battlehack.cleancity.cleancity;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
-import android.location.Location;
-import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -13,8 +9,6 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
-
-import java.util.ArrayList;
 
 
 public class CleanListActivity extends Activity {
@@ -32,8 +26,7 @@ public class CleanListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
 
-        lv = (ListView) findViewById( R.id.listView);
-        sv = (SearchView) findViewById( R.id.searchView );
+
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names );
         lv.setAdapter( adapter );
