@@ -18,17 +18,20 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
+import com.battlehack.cleancity.cleancity.RestAPI.APIGetAllBeacons;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.*;
 
+
+import org.json.JSONArray;
 
 import java.text.DateFormat;
 import java.util.Date;
 
 
 public class MainActivity extends ActionBarActivity implements GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener{
+        GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener, APIGetAllBeacons.AllBeaconInterface{
 
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
@@ -40,7 +43,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     // Bool to track whether the app is already resolving an error
     private boolean mResolvingError = false;
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+    APIGetAllBeacons api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +51,12 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         setContentView(R.layout.activity_main);
 
         final Spinner spinner = (Spinner) findViewById(R.id.bin_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
+        // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.bin_spinner_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+        // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+        // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
         // This button helps you find a receptable bin
@@ -71,10 +74,13 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 double longitude = mLastLocation.getLongitude();
                 double latitude = mLastLocation.getLatitude();
 
+
                 //initialize empty list
                 //get list of locations ie garbage
                 //sort
                 // loop over and add upto and including proximity locations to empty list.
+
+
 
                 Log.d("latitude in main", "" + longitude);
 
@@ -96,12 +102,23 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         reporter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                        mGoogleApiClient);
+
+                //save mLastLocation in server
+
                 Intent intent = new Intent(getBaseContext(), ReportActivity.class);
                 startActivity(intent);
             }
         });
 
+
+        api = new APIGetAllBeacons( this );
+        api.execute();
+
     }
+
 
 
     protected synchronized void buildGoogleApiClient() {
@@ -195,5 +212,18 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         }
 
     }
+
+    @Override
+    public String allDownloadedBeacons(String data){
+        try {
+            JSONArray jsonArray = new JSONArray(data);
+            Log.d("JSON ARRAY IN MAIN:", ""+jsonArray );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+
 
 }
