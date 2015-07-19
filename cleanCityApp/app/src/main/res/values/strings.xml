@@ -9,9 +9,14 @@
     <string name="title_activity_clean_list">CleanListActivity</string>
     <string name="title_activity_litter_report">litterReportActivity</string>
     <string name="title_activity_bin_report">binReportActivity</string>
-    <string name="report_thank_you"> Thank you for reporting the mess! Someone will be sent to verify this location. If you are the first reporter, we will credit your account!</string>
+    <string name="report_thank_you"> Thank you for reporting the mess! Someone will be sent to verify this location. Place a bounty on this mess!</string>
+    <string name="report_done"> Your bounty has been made! </string>
+
+
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_select_proximity">SelectProximityActivity</string>
+    <string name="title_activity_select_receptacle">SelectReceptacleActivity</string>
 
 </resources>

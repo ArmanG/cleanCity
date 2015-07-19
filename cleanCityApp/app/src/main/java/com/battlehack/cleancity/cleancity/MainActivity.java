@@ -2,6 +2,7 @@ package com.battlehack.cleancity.cleancity;
 
 import android.content.Intent;
 import android.location.Location;
+import android.provider.MediaStore;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -9,7 +10,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.battlehack.cleancity.cleancity.RestAPI.APIGetAllBeacons;
@@ -45,6 +48,19 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        LinearLayout proximity = (LinearLayout) findViewById(R.id.proximityLayout);
+        proximity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start a new activity which finds the location of the nearest bin
+                TextView proximityValue = (TextView) findViewById(R.id.proximityValue);
+                Intent intent = new Intent(getBaseContext(), SelectProximityActivity.class);
+                double proximity = Double.parseDouble(proximityValue.getText().toString());
+                intent.putExtra("proximity", proximity);
+                startActivityForResult(intent, 1);
+            }
+        });
+
         final Spinner spinner = (Spinner) findViewById(R.id.bin_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -64,7 +80,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 Intent intent = new Intent(getBaseContext(), LocationActivity.class);
                 intent.putExtra("name", selectedbin);
 
-                EditText et = (EditText) findViewById(R.id.proximityValue);
+                TextView et = (TextView) findViewById(R.id.proximityValue);
                 double proximity = Double.parseDouble(et.getText().toString());
                 double longitude = mLastLocation.getLongitude();
                 double latitude = mLastLocation.getLatitude();
@@ -93,34 +109,14 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 
 
         // This button helps you report a litter mess
-        Button reportLitter = (Button) findViewById(R.id.litter_button);
-        reportLitter.setOnClickListener(new View.OnClickListener() {
+        LinearLayout messLayout = (LinearLayout) findViewById(R.id.messLayout);
+        messLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(getBaseContext(), ReportActivity.class);
 
                 // same as reportBin right now
-                startActivity(intent);
-            }
-        });
-
-        // This button helps you report a full bin
-        Button reportBin = (Button) findViewById(R.id.bin_button);
-        reportBin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
-                        mGoogleApiClient);
-
-                // if mLastLocation not in server, save to server and send payment
-
-
-
-                Intent intent = new Intent(getBaseContext(), ReportActivity.class);
-
-                // same as reportLitter right now
                 startActivity(intent);
             }
         });
@@ -149,8 +145,8 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 mGoogleApiClient);
         if (mLastLocation != null) {
 
-            Toast.makeText(this, "Latitude = " + mLastLocation.getLatitude() + "\n" +
-                    "Longitude = " + mLastLocation.getLongitude(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "Latitude = " + mLastLocation.getLatitude() + "\n" +
+            //       "Longitude = " + mLastLocation.getLongitude(), Toast.LENGTH_LONG).show();
         }
         mRequestingLocationUpdates = true;
         if (mRequestingLocationUpdates) {
@@ -238,5 +234,19 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     }
 
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == 1) {
+            // Make sure the request was successful
+            if (resultCode == RESULT_OK) {
+                // The user adjusted the proximity
+                // The Intent's data Uri identifies what the new proximity is
+                String proximity = data.getStringExtra("proximity");
+                Log.d("onActivityResult prox", proximity);
+                TextView proxValue = (TextView) findViewById(R.id.proximityValue);
+                proxValue.setText(proximity);
+            }
+        }
+    }
 }

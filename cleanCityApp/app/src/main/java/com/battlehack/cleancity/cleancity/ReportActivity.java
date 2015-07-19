@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -33,6 +34,14 @@ public class ReportActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
         clientToken = getClientToken();
+
+        Button done = (Button) findViewById(R.id.btnPaid);
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private String getClientToken() {
@@ -117,10 +126,14 @@ public class ReportActivity extends ActionBarActivity {
                             }
                         })
                         .create();
-                msgAlert.show();
+                //msgAlert.show();
 
                 Button payBtn = (Button) findViewById(R.id.btnPay);
-                payBtn.setText("Pay it AGAIN!");
+                payBtn.setVisibility(View.GONE);
+                TextView tv = (TextView) findViewById(R.id.reportTextView);
+                tv.setText(getResources().getString(R.string.report_done));
+                Button paidBtn = (Button) findViewById(R.id.btnPaid);
+                paidBtn.setVisibility(View.VISIBLE);
             }
             @Override
             public void onFailure(String response, Throwable e)     {
