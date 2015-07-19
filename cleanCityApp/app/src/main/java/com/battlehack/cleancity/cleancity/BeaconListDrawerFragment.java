@@ -2,6 +2,8 @@ package com.battlehack.cleancity.cleancity;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,97 +12,65 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.battlehack.cleancity.cleancity.Models.Beacon;
-import com.battlehack.cleancity.cleancity.RestAPI.APIGetBeaconsByDistance;
-
-import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BeaconListDrawerFragment extends Fragment implements APIGetBeaconsByDistance.AllBeaconsByDistanceInterface {
-
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    public static final String LATITUDE = "LATITUDE";
-    public static final String LONGITUDE = "LONGITUDE";
-    public static final String MAX_DIST = "MAX_DIST";
-
+public class BeaconListDrawerFragment extends Fragment  {
 
     private RecyclerView recyclerView;
     private BeaconDrawerAdapter adapter;
-    private APIGetBeaconsByDistance api;
-
-    // for retrieving distances
-    private double lat, lon, max_dist;
-
+    private BeaconListInterface callback;
+    private List<Beacon> list;
 
     // Required empty public constructor
     public BeaconListDrawerFragment() {}
 
-
-    public void loadBeacons() {
-        // Create
-        try {
-            this.api.execute(lat, lon, max_dist);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static BeaconListDrawerFragment newInstance(double lat, double lon, double max_dist) {
-        BeaconListDrawerFragment fragment = new BeaconListDrawerFragment();
-        Bundle args = new Bundle();
-
-        // Set arguments
-        args.putDouble(LATITUDE, lat);
-        args.putDouble(LONGITUDE, lon);
-        args.putDouble(MAX_DIST, max_dist);
-        fragment.setArguments(args);
-
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.api = new APIGetBeaconsByDistance(this);
-
-        if (getArguments() != null) {
-            this.lat = getArguments().getDouble(LATITUDE);
-            this.lon = getArguments().getDouble(LONGITUDE);
-            this.max_dist = getArguments().getDouble(MAX_DIST);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View layout =  inflater.inflate(R.layout.fragment_beacon_list_drawer, container, false);
-        this.recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
+        this.recyclerView = (RecyclerView) layout.findViewById(R.id.drawerBeaconList);
+
+        list = callback.setBeaconList();
+
+        this.adapter = new BeaconDrawerAdapter(getActivity(), list == null ? new ArrayList() : list );
+        this.adapter.setOnItemClickListener(new BeaconDrawerAdapter.OnItemClickListener() {
+
+            @Override
+        public void onItemClick(View v, int position) {
+                Beacon beacon = list.get(position);
+                
+                Uri gmmIntentUri = Uri.parse("geo:" + beacon.getLatitude() + "," + beacon.getLongitude());
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+        }
+        });
+
+        this.recyclerView.setAdapter(adapter);
+        this.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         return layout;
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+
+        try {
+            callback = (BeaconListInterface) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnArticleSelectedListener");
+        }
     }
 
-    @Override
-    public void allBeaconsByDistance(String data) {
-        try {
-            JSONArray jsonArray = new JSONArray(data);
-            List<Beacon> list = new ArrayList<>();
-
-            for (int i = 0; i < jsonArray.length(); i ++) {
-                list.add(Beacon.getBeaconFromJson(jsonArray.getJSONObject(i)));
-            }
-
-            // Setup View
-            this.adapter = new BeaconDrawerAdapter(getActivity(), list);
-
-            recyclerView.setAdapter(adapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    interface BeaconListInterface {
+        List<Beacon> setBeaconList();
     }
 }

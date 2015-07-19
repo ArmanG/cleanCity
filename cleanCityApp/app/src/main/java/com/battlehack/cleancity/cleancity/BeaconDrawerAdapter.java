@@ -19,6 +19,7 @@ public class BeaconDrawerAdapter extends RecyclerView.Adapter<BeaconDrawerAdapte
     List<Beacon> data = Collections.emptyList();
     private LayoutInflater inflater;
     private Context context;
+    private OnItemClickListener listener;
 
     public BeaconDrawerAdapter (Context context, List<Beacon> data) {
         this.context = context;
@@ -42,6 +43,7 @@ public class BeaconDrawerAdapter extends RecyclerView.Adapter<BeaconDrawerAdapte
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Beacon current = data.get(position);
         holder.title.setText(current.getName());
+        holder.distance.setText("" + current.getDistance() + " meters");
     }
 
     @Override
@@ -49,12 +51,28 @@ public class BeaconDrawerAdapter extends RecyclerView.Adapter<BeaconDrawerAdapte
         return data.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
+        TextView distance;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
+            title = (TextView) itemView.findViewById(R.id.beacon_name_textView);
+            distance = (TextView) itemView.findViewById(R.id.beacon_distance_textView);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            listener.onItemClick(v, getPosition());
+        }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View v, int position);
     }
 }
