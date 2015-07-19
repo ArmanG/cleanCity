@@ -2,6 +2,7 @@ package com.battlehack.cleancity.cleancity;
 
 import android.content.Intent;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
@@ -27,7 +28,7 @@ import java.util.Date;
 
 
 public class MainActivity extends ActionBarActivity implements GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener, LocationListener {
+        GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener{
 
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
@@ -179,6 +180,7 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
         super.onPause();
         stopLocationUpdates();
     }
+
 
     protected void stopLocationUpdates() {
         LocationServices.FusedLocationApi.removeLocationUpdates(

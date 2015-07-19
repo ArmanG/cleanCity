@@ -31,7 +31,10 @@
             android:name=".ReportActivity"
             android:label="@string/title_activity_report" >
         </activity>
-
+        <activity
+            android:name=".CleanListActivity"
+            android:label="@string/title_activity_clean_list" >
+        </activity>
     </application>
 
 </manifest>
