@@ -1,20 +1,35 @@
 package com.battlehack.cleancity.cleancity;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 
+import com.battlehack.cleancity.cleancity.Models.Beacon;
+import com.battlehack.cleancity.cleancity.RestAPI.APIGetBeaconsByDistance;
 
-public class LocationActivity extends Activity {
+import org.json.JSONArray;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class LocationActivity extends Activity implements
+        APIGetBeaconsByDistance.AllBeaconsByDistanceInterface, BeaconListDrawerFragment.BeaconListInterface  {
+
+
+    private APIGetBeaconsByDistance api;
     private BeaconListDrawerFragment beaconListDrawerFragment;
+    List<Beacon> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+
+        this.api = new APIGetBeaconsByDistance(this);
+
 
         // Get the location from the intent
         Intent intent = this.getIntent();
@@ -24,13 +39,12 @@ public class LocationActivity extends Activity {
         double latitude = b.getDouble("latitude");
         double proximity = b.getDouble("proximity");
 
-        Log.d("name is", name);
-        Log.d("Longitude is", ""+longitude);
-        Log.d("Latitude is", ""+latitude);
-        Log.d("Proximity", ""+proximity);
 
-        beaconListDrawerFragment = BeaconListDrawerFragment.newInstance(longitude,latitude,proximity);
-        beaconListDrawerFragment.loadBeacons();
+        try {
+            api.execute(latitude, longitude, proximity);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -38,5 +52,39 @@ public class LocationActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_location, menu);
         return true;
+    }
+
+    @Override
+    public void allBeaconsByDistance(String data) {
+        try {
+            JSONArray jsonArray = new JSONArray(data);
+            this.list = new ArrayList<>();
+
+            for (int i = 0; i < jsonArray.length(); i ++) {
+                list.add(Beacon.getBeaconFromJson(jsonArray.getJSONObject(i)));
+            }
+
+
+
+            // Make sure fragment container exists
+            if (findViewById(R.id.fragment_container) != null) {
+
+                // Create new fragment to be placed in the activity
+                //CreateHabitFragment firstFragment = new CreateHabitFragment();
+                BeaconListDrawerFragment firstFragment = new BeaconListDrawerFragment();
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                // Add the fragment to the 'fragment_container' FrameLayout
+                transaction.add(R.id.fragment_container, firstFragment);
+                transaction.commit();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Beacon> setBeaconList() {
+        return this.list;
     }
 }

@@ -3,11 +3,9 @@ package com.battlehack.cleancity.cleancity;
 import android.content.Intent;
 import android.location.Location;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,17 +15,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.battlehack.cleancity.cleancity.RestAPI.APIGetAllBeacons;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.*;
-
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 
 import org.json.JSONArray;
 
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 

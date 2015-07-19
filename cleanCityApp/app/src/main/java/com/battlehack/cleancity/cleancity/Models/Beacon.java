@@ -106,7 +106,7 @@ public class Beacon {
         this.full = full;
     }
 
-    public double isDistance() {
+    public double getDistance() {
         return distance;
     }
 
