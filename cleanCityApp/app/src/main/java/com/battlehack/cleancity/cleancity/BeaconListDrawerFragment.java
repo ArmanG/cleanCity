@@ -45,8 +45,8 @@ public class BeaconListDrawerFragment extends Fragment  {
             @Override
         public void onItemClick(View v, int position) {
                 Beacon beacon = list.get(position);
-                
-                Uri gmmIntentUri = Uri.parse("geo:" + beacon.getLatitude() + "," + beacon.getLongitude());
+               // geo:0,0?q=latitude,longitude
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + beacon.getLatitude() + "," + beacon.getLongitude());
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
