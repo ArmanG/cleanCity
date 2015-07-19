@@ -2,6 +2,7 @@ package com.battlehack.cleancity.cleancity;
 
 import android.content.Intent;
 import android.location.Location;
+import android.location.LocationManager;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -31,6 +33,11 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     Location mLastLocation;
     String mLastUpdateTime;
     Location mCurrentLocation;
+    LocationRequest mLocationRequest;
+    boolean mRequestingLocationUpdates;
+
+    // Bool to track whether the app is already resolving an error
+    private boolean mResolvingError = false;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -58,20 +65,30 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
                 Intent intent = new Intent(getBaseContext(), LocationActivity.class);
                 intent.putExtra("name", selectedbin);
 
+                EditText et = (EditText) findViewById(R.id.proximityValue);
+                double proximity = Double.parseDouble(et.getText().toString());
                 double longitude = mLastLocation.getLongitude();
                 double latitude = mLastLocation.getLatitude();
+
+                //initialize empty list
+                //get list of locations ie garbage
+                //sort
+                // loop over and add upto and including proximity locations to empty list.
 
                 Log.d("latitude in main", "" + longitude);
 
                 intent.putExtra("longitude", longitude);
                 intent.putExtra("latitude", latitude);
+                intent.putExtra("proximity", proximity);
                 startActivity(intent);
             }
         });
 
+
+
         buildGoogleApiClient();
-        mGoogleApiClient.connect();
         onConnected(savedInstanceState);
+
 
         // This button helps you report a mess
         Button reporter = (Button) findViewById(R.id.mess_button);
@@ -83,18 +100,8 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
             }
         });
 
-    /**
-        // This button helps you find a mess to clean
-        Button reporter = (Button) findViewById(R.id.mess_button);
-        reporter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), ReportActivity.class);
-                startActivity(intent);
-            }
-        });
-*/
     }
+
 
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -107,16 +114,18 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 
     @Override
     public void onConnected(Bundle bundle) {
+
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
         if (mLastLocation != null) {
 
             Toast.makeText(this, "Latitude = " + mLastLocation.getLatitude() + "\n" +
                     "Longitude = " + mLastLocation.getLongitude(), Toast.LENGTH_LONG).show();
-            Log.d("LATITUDE", String.valueOf(mLastLocation.getLatitude()));
-            Log.d("GGGGGGGG", "HELLLLLLLLL");
         }
-
+        mRequestingLocationUpdates = true;
+        if (mRequestingLocationUpdates) {
+           //startLocationUpdates();
+        }
 
     }
 
@@ -131,9 +140,9 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     }
 
     protected void createLocationRequest() {
-        LocationRequest mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(10000);
-        mLocationRequest.setFastestInterval(10000);
+        mLocationRequest = new LocationRequest();
+        mLocationRequest.setInterval(1000);
+        mLocationRequest.setFastestInterval(1000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
@@ -141,37 +150,48 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     public void onLocationChanged(Location location) {
         mCurrentLocation = location;
         mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
-        //updateUI();
+        Toast.makeText(this, "Latitude = " + mLastLocation.getLatitude() + "\n" +
+                "Longitude = " + mLastLocation.getLongitude(), Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    protected void onStart() {
+        super.onStart();
+        //if (!mResolvingError) {  // more about this later
+            mGoogleApiClient.connect();
+        //}
+    }
+
+    protected void startLocationUpdates() {
+        LocationServices.FusedLocationApi.requestLocationUpdates(
+                mGoogleApiClient, mLocationRequest, this);
+    }
+
+
+    @Override
+    protected void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    protected void onPause() {
+        super.onPause();
+        stopLocationUpdates();
     }
 
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
+    protected void stopLocationUpdates() {
+        LocationServices.FusedLocationApi.removeLocationUpdates(
+                mGoogleApiClient, this);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mGoogleApiClient.isConnected() && !mRequestingLocationUpdates) {
+            startLocationUpdates();
+        }
+
+    }
 
 }
