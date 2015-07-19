@@ -17,35 +17,53 @@
         android:layout_below="@+id/textViewForm"
         android:layout_centerHorizontal="true" />
 
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Find"
         android:id="@+id/find_button"
-        android:layout_below="@+id/bin_spinner"
+        android:layout_above="@+id/linearLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView android:text="Report a mess: " android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewMess"
-        android:layout_below="@+id/find_button"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
+        android:layout_above="@+id/textView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Proximity"
+            android:id="@+id/proximityTextView"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:id="@+id/proximityValue"/>
+
+        </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Report!"
         android:id="@+id/mess_button"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textViewMess"
-        android:layout_alignParentLeft="true" />
+        android:layout_above="@+id/textViewClean"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView android:text="Cleanup a mess: " android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textViewClean"
-        android:layout_below="@+id/mess_button"
+        android:layout_above="@+id/clean_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -54,8 +72,18 @@
         android:layout_height="wrap_content"
         android:text="Clean!"
         android:id="@+id/clean_button"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textViewClean"
-        android:layout_alignParentLeft="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Report a mess: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_above="@+id/mess_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>
