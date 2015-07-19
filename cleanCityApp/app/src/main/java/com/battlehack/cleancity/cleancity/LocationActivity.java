@@ -1,9 +1,10 @@
 package com.battlehack.cleancity.cleancity;
 
-import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import com.battlehack.cleancity.cleancity.Models.Beacon;
@@ -15,9 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LocationActivity extends Activity implements
+public class LocationActivity extends ActionBarActivity implements
         APIGetBeaconsByDistance.AllBeaconsByDistanceInterface, BeaconListDrawerFragment.BeaconListInterface  {
 
+    private Toolbar toolbar;
 
     private APIGetBeaconsByDistance api;
     private BeaconListDrawerFragment beaconListDrawerFragment;
@@ -27,6 +29,11 @@ public class LocationActivity extends Activity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+
+        this.toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(this.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         this.api = new APIGetBeaconsByDistance(this);
 

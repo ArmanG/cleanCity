@@ -2,14 +2,13 @@ package com.battlehack.cleancity.cleancity;
 
 import android.content.Intent;
 import android.location.Location;
-import android.provider.MediaStore;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -37,6 +36,8 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     LocationRequest mLocationRequest;
     boolean mRequestingLocationUpdates;
 
+    private Toolbar toolbar;
+
     // Bool to track whether the app is already resolving an error
     private boolean mResolvingError = false;
 
@@ -47,6 +48,11 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(this.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         LinearLayout proximity = (LinearLayout) findViewById(R.id.proximityLayout);
         proximity.setOnClickListener(new View.OnClickListener() {
